@@ -145,8 +145,10 @@ export default function GoogleMaps() {
           matches.map((match: any) => [match.offset, match.offset + match.length]),
         );
 
+				let key = (props as any).key;
+				delete (props as any).key;
         return (
-          <li {...props}>
+          <li {...props} key={key}>
             <Grid container sx={{ alignItems: 'center' }}>
               <Grid item sx={{ display: 'flex', width: 44 }}>
                 <LocationOnIcon sx={{ color: 'text.secondary' }} />
